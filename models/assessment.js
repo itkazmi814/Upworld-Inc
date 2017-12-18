@@ -3,12 +3,12 @@ module.exports = (sequelize, DataTypes) => {
 		"Assessment",
 		{
 			assessmentName: {
-				type: DataTypes.INTEGER,
+				type: DataTypes.STRING,
 				allowNull: false
 			},
 
 			value: {
-				type: DataTypes.STRING,
+				type: DataTypes.INTEGER,
 				allowNull: false
 			}
 		},
@@ -17,11 +17,18 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	);
 
-	Assessment.associate = models => {
+	TodoItem.associate = (models) => {
+		TodoItem.belongsTo(models.Todo, {
+		  foreignKey: 'todoId',
+		  onDelete: 'CASCADE',
+		});
+	  };	
+	
+	  Assessment.associate = models => {
 		Assessment.belongsTo(models.Person, {
-			foreignKey: {
-				allowNull: false
-			}
+			foreignKey: 'studentId',
+			onDelete: 'CASCADE',
+			allowNull: false
 		});
 	};
 

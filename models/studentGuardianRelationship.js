@@ -1,7 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
 	var StudentGuardianRelationship = sequelize.define(
 		"StudentGuardianRelationship",
-		{},
+		{
+			content: {
+				type: DataTypes.STRING,
+				allowNull: false
+			}			
+		},
 		{
 			timestamps: true
 		}

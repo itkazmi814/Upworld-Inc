@@ -1,7 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
 	var MentorMenteeRelationship = sequelize.define(
 		"MentorMenteeRelationship",
-		{},
+		{
+			content: {
+				type: DataTypes.STRING,
+				allowNull: false
+			}			
+		},
 		{
 			timestamps: true
 		}

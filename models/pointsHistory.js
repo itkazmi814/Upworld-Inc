@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 
 			event: {
 				// text field, revisit
+				type: DataTypes.STRING,
 				allowNull: false
 			},
 

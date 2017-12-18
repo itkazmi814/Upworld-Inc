@@ -2,10 +2,6 @@ module.exports = (sequelize, DataTypes) => {
 	var Person = sequelize.define(
 		"Person",
 		{
-			id: {
-				type: DataTypes.STRING,
-				primaryKey: true
-			},
 
 			// enum list, types: student, mentor, parent/guardian,
 			// inactive students, graduate (nonmentors).
